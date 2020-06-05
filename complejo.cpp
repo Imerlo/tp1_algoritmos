@@ -1,9 +1,9 @@
-#include <complejo.h>
+#include "complejo.h"
 #include <iostream>
 #include <cmath>
 
 using namespace std;
-
+/*contructores: base , con parametros y copia, usados en la teorica*/
 complejo::complejo() : re_(0), im_(0)
 {
 }
@@ -19,7 +19,7 @@ complejo::complejo(double r, double i) : re_(r), im_(i)
 complejo::complejo(complejo const &c) : re_(c.re_), im_(c.im_)
 {
 }
-
+/*sobrecarga de operadores para suma resta multiplicacion*/
 complejo const &
 complejo::operator=(complejo const &c)
 {
@@ -60,7 +60,7 @@ complejo::operator-=(complejo const &c)
 complejo::~complejo()
 {
 }
-
+/*getters*/
 double
 complejo::re() const
 {
@@ -71,25 +71,23 @@ double complejo::im() const
 {
 	return im_;
 }
-
+/*modulo  y modulo cuadrado */
 double
-complejo::abs() const
+complejo::modulo() const
 {
 	return std::sqrt(re_ * re_ + im_ * im_);
 }
 
 double
-complejo::abs2() const
+complejo::modulo2() const
 {
 	return re_ * re_ + im_ * im_;
 }
 
-double complejo::get_phase() const
+double
+complejo::fase(const complejo & c) const
 {
-(const complejo_t * c){
-
     return atan2(c.re_,c.im_);
-
 }
 
 
@@ -171,6 +169,7 @@ operator<<(ostream &os, const complejo &c)
 	          << ")";
 }
 
+/*Solo lee con formato (re,im) y lo guarda en c*/
 istream &
 operator>>(istream &is, complejo &c)
 {
@@ -209,17 +208,24 @@ operator>>(istream &is, complejo &c)
 
 
 
-stringtocomplejo(istream& is)
+
+/*
+
+para convertir una cadena en complejo 
+
+
+complejo& stringtocomplejo(istream& is)
 {
 std::string temp;
 
 if (null)
-eroor
+error
 
 std::cin >> temp
 
+
 string for (size_t i=0,i<stringlen();i++)
-	
+*/	
 
 
 
